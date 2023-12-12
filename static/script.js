@@ -30,7 +30,6 @@ $("#add-cupcake").on("submit", async function (evt) {
   let size = $("#size").val();
   let image = $("#image").val();
   let payload = {flavor, rating, size, image};
-  console.log(payload);
   const addCupcakeResponse = await axios.post(`${BASE_URL}/cupcakes`, payload);
   let newCupcake = $(createCupcakeItem(addCupcakeResponse.data.cupcake));
   $("#cupcakes-list").append(newCupcake);
